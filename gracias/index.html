@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="es-AR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#fff0e5">
+  <meta name="robots" content="noindex,follow">
+  <meta name="description" content="Finalizá tu inscripción a Un cafecito con criterio realizando la transferencia y enviando el comprobante por WhatsApp.">
+  <title>Finalizá tu inscripción | Un cafecito con criterio</title>
+  <style>
+    :root{--cream:#fff0e5;--paper:#fffaf5;--pink:#e8b6d5;--pink-light:#f8e3ef;--berry:#a90e45;--dark:#650d25;--ink:#4d1424;--muted:#795b60;--line:#efcbd8;--shadow:0 22px 60px rgba(101,13,37,.12)}
+    *{box-sizing:border-box}body{margin:0;background:linear-gradient(135deg,#fff4eb,#f9dce8);font:16px/1.6 Arial,Helvetica,sans-serif;color:var(--ink);min-height:100vh;display:flex;flex-direction:column}
+    .wrap{width:min(760px,calc(100% - 32px));margin:auto;padding:42px 0 55px}.brand{font:700 1.08rem Georgia,serif;color:var(--dark);text-decoration:none;display:inline-block;margin-bottom:28px}.brand span{color:var(--berry)}
+    .card{background:var(--paper);border:1px solid var(--line);border-radius:26px;padding:clamp(24px,5vw,46px);box-shadow:var(--shadow)}
+    .check{width:58px;height:58px;border-radius:50%;display:grid;place-items:center;background:var(--pink-light);color:var(--berry);font-size:1.9rem;margin-bottom:20px}
+    .eyebrow{font-size:.76rem;letter-spacing:.14em;text-transform:uppercase;font-weight:900;color:var(--berry)}
+    h1,h2{font-family:Georgia,'Times New Roman',serif;color:var(--dark);font-weight:500;line-height:1.08}h1{font-size:clamp(2.4rem,7vw,4rem);margin:10px 0 12px}h2{font-size:1.55rem;margin:0 0 10px}
+    p{color:var(--muted);margin:8px 0 18px}.name{font-weight:700;color:var(--berry)}
+    .steps{display:grid;gap:18px;margin-top:28px}.step{border:1px solid var(--line);border-radius:18px;padding:20px;background:#fff8f4}.step-number{display:inline-grid;place-items:center;width:30px;height:30px;border-radius:50%;background:var(--pink);color:var(--dark);font-weight:900;margin-right:8px}
+    .amount{font:700 clamp(2rem,6vw,2.8rem) Georgia,serif;color:var(--berry);margin:12px 0 2px}.muted-small{font-size:.86rem;color:var(--muted)}
+    .alias-row{display:flex;align-items:center;justify-content:space-between;gap:12px;background:white;border:1px dashed #d99ab7;border-radius:13px;padding:13px 14px;margin:13px 0 8px}.alias{font-size:1.35rem;letter-spacing:.02em;font-weight:900;color:var(--dark);overflow-wrap:anywhere}
+    button,.btn{border:0;border-radius:999px;padding:12px 17px;font:700 .92rem Arial,sans-serif;cursor:pointer;text-decoration:none;display:inline-flex;align-items:center;justify-content:center;gap:8px}
+    .copy{background:var(--pink-light);color:var(--dark);white-space:nowrap}.primary{background:var(--berry);color:white;width:100%;padding:16px 20px;margin-top:14px;font-size:1rem}.primary:hover{background:var(--dark)}
+    .notice{border-left:4px solid var(--pink);padding:12px 15px;background:#fff0e8;border-radius:0 12px 12px 0;font-size:.9rem;color:var(--muted);margin-top:18px}
+    .status{font-size:.83rem;color:var(--berry);min-height:1.3em;margin:4px 0 0}.footer{text-align:center;font-size:.8rem;color:#8e6e75;margin-top:23px}
+    @media(max-width:480px){.alias-row{align-items:flex-start;flex-direction:column}.copy{width:100%}.wrap{padding-top:25px}}
+  </style>
+</head>
+<body>
+  <main class="wrap">
+    <a class="brand" href="/">¡Venga, pues! <span>☕</span></a>
+    <article class="card">
+      <div class="check" aria-hidden="true">✓</div>
+      <span class="eyebrow">Un cafecito con criterio</span>
+      <h1>¡Ya casi estás!</h1>
+      <p id="greeting">Recibimos tus datos. Para completar tu inscripción, seguí estos dos pasos:</p>
+
+      <div class="steps">
+        <section class="step">
+          <h2><span class="step-number">1</span>Realizá la transferencia</h2>
+          <p>Transferí el importe de la inscripción a través de Mercado Pago o desde tu banco o billetera virtual.</p>
+          <div class="muted-small">Importe de la inscripción · incluye merienda</div>
+          <div class="amount">$10.000 ARS</div>
+          <div class="muted-small">Alias de Mercado Pago</div>
+          <div class="alias-row">
+            <span class="alias" id="paymentAlias">Luz.ayda</span>
+            <button class="copy" type="button" id="copyAlias">Copiar alias</button>
+          </div>
+          <p class="muted-small">Antes de confirmar la transferencia, verificá que el alias y el destinatario sean correctos en tu aplicación de pago.</p>
+          <div class="status" id="copyStatus" aria-live="polite"></div>
+        </section>
+
+        <section class="step">
+          <h2><span class="step-number">2</span>Enviá el comprobante</h2>
+          <p>Después de realizar la transferencia, mandanos el comprobante por WhatsApp para que podamos verificar el pago y confirmar tu lugar.</p>
+          <a class="btn primary" id="whatsappButton" href="https://wa.me/549114447492" target="_blank" rel="noopener">Enviar comprobante por WhatsApp ↗</a>
+          <p class="muted-small">WhatsApp: +54 9 11 4447-492</p>
+        </section>
+      </div>
+
+      <div class="notice"><strong>Importante:</strong> tu lugar quedará confirmado una vez que verifiquemos el pago. Después de la confirmación te enviaremos la información para sumarte al grupo privado de WhatsApp del encuentro.</div>
+    </article>
+    <p class="footer">Jueves 3 de diciembre de 2026 · 19:00 h · Club Country Banfield, Banfield</p>
+  </main>
+  <script>
+    let attendeeName = '';
+    try { attendeeName = sessionStorage.getItem('cafecitoNombre') || ''; } catch (_) {}
+    if (attendeeName) {
+      document.getElementById('greeting').innerHTML = '¡Gracias, <span class="name"></span>! Recibimos tus datos. Para completar tu inscripción, seguí estos dos pasos:';
+      document.querySelector('.name').textContent = attendeeName;
+    }
+
+    document.getElementById('copyAlias').addEventListener('click', async () => {
+      const status = document.getElementById('copyStatus');
+      try {
+        await navigator.clipboard.writeText('Luz.ayda');
+        status.textContent = 'Alias copiado. Ya podés pegarlo en Mercado Pago.';
+      } catch (_) {
+        status.textContent = 'Copiá manualmente el alias Luz.ayda.';
+      }
+    });
+
+    const firstName = attendeeName.trim().split(/\s+/)[0] || '';
+    const greeting = firstName ? `Hola, soy ${firstName}.` : 'Hola.';
+    const text = `${greeting} Ya realicé la transferencia de $10.000 ARS para el encuentro “Un cafecito con criterio” del 3 de diciembre. Te envío el comprobante para que puedan verificar el pago y confirmar mi inscripción.`;
+    document.getElementById('whatsappButton').href = 'https://wa.me/549114447492?text=' + encodeURIComponent(text);
+  </script>
+</body>
+</html>
