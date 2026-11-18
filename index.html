@@ -5,51 +5,115 @@
 
     .form-card .field { margin-bottom: 14px; }
     .form-card .field input { min-height: 49px; }
-  </style></head><body>
-<header class="hero" id="inicio"><div class="wrap"><nav class="nav"><a class="brand" href="#inicio">¡Venga, pues! <span>☕</span></a><a href="#registro">Reserva tu lugar ↗</a></nav><div class="hero-grid"><div><span class="eyebrow">Un encuentro entre café y psicología</span><h1>Un cafecito<br><em>con criterio.</em></h1><div class="brush tagline">¿Y quién dijo que criar era fácil?</div><p class="lead">Un encuentro para hablar de crianza como nos pasa en la vida real: con preguntas, experiencias, límites, desafíos y ganas de aprender. Sin fórmulas mágicas y sin juzgarnos.</p><div class="hero-actions"><a class="btn" href="#registro">Quiero reservar mi lugar ☕</a><a class="secondary" href="#conversacion">Conoce el encuentro ↓</a></div><div class="quick-meta"><span class="pill">Jueves 3 de diciembre</span><span class="pill">19:00 h · Argentina</span><span class="pill">Club Country Banfield</span></div></div><div class="portrait-wrap"><div class="portrait-frame"><img src="assets/luz-ayda-foto-original.jpg" alt="Psic. Luz Ayda Marín Hernández" fetchpriority="high"></div><div class="coffee-stamp">Café +<br>psicología</div><div class="portrait-caption"><strong>Psic. Luz Ayda Marín Hernández</strong><span>Psicóloga · Neuropsicóloga Clínica</span></div></div></div></div></header>
+  
+/* Registration modal */
+.nav-cta{background:transparent;border:0;border-bottom:2px solid var(--pink);color:var(--berry);font:800 .95rem Arial,sans-serif;padding:7px 0;cursor:pointer}
+.btn{font-family:Arial,Helvetica,sans-serif;cursor:pointer}
+.event-cta{grid-column:1/-1;justify-self:start;margin-top:8px}
+.modal-backdrop{position:fixed;inset:0;z-index:1000;background:rgba(48,8,22,.68);display:none;align-items:center;justify-content:center;padding:18px;overflow-y:auto}
+.modal-backdrop.is-open{display:flex}
+.registration-modal{position:relative;width:min(100%,520px);max-height:min(92vh,820px);overflow-y:auto;background:var(--paper);border:1px solid var(--line);border-radius:24px;box-shadow:0 28px 90px rgba(0,0,0,.28);padding:clamp(22px,5vw,34px);animation:modalIn .18s ease-out}
+@keyframes modalIn{from{opacity:0;transform:translateY(10px) scale(.99)}to{opacity:1;transform:translateY(0) scale(1)}}
+.modal-close{position:absolute;right:16px;top:14px;width:38px;height:38px;border:0;border-radius:50%;background:var(--pink-light);color:var(--dark);font-size:1.35rem;cursor:pointer}
+.registration-modal h2{font:500 2rem/1.1 Georgia,serif;color:var(--dark);margin:5px 44px 8px 0}
+.registration-modal .modal-intro{color:var(--muted);margin:0 0 22px;font-size:.94rem}
+.registration-modal .field{margin-bottom:14px}
+.registration-modal .field input{min-height:50px}
+.registration-modal .submit{width:100%;margin-top:8px}
+.registration-modal .privacy{font-size:.74rem;color:#947d81;margin:12px 0 0}
+.registration-modal .form-message{display:none;margin-top:14px;padding:13px;border-radius:11px;background:#f8e2ed;color:var(--dark);font-size:.9rem}
+body.modal-open{overflow:hidden}
+@media(max-width:540px){.event-cta{width:100%;justify-self:stretch}.nav-cta{font-size:.82rem}}
+
+</style></head><body>
+<header class="hero" id="inicio"><div class="wrap"><nav class="nav"><a class="brand" href="#inicio">¡Venga, pues! <span>☕</span></a><button type="button" class="nav-cta js-open-registration">Reserva tu lugar ↗</button></nav><div class="hero-grid"><div><span class="eyebrow">Un encuentro entre café y psicología</span><h1>Un cafecito<br><em>con criterio.</em></h1><div class="brush tagline">¿Y quién dijo que criar era fácil?</div><p class="lead">Un encuentro para hablar de crianza como nos pasa en la vida real: con preguntas, experiencias, límites, desafíos y ganas de aprender. Sin fórmulas mágicas y sin juzgarnos.</p><div class="hero-actions"><button type="button" class="btn js-open-registration">Quiero reservar mi lugar ☕</button><a class="secondary" href="#conversacion">Conoce el encuentro ↓</a></div><div class="quick-meta"><span class="pill">Jueves 3 de diciembre</span><span class="pill">19:00 h · Argentina</span><span class="pill">Club Country Banfield</span></div></div><div class="portrait-wrap"><div class="portrait-frame"><img src="assets/luz-ayda-foto-original.jpg" alt="Psic. Luz Ayda Marín Hernández" fetchpriority="high"></div><div class="coffee-stamp">Café +<br>psicología</div><div class="portrait-caption"><strong>Psic. Luz Ayda Marín Hernández</strong><span>Psicóloga · Neuropsicóloga Clínica</span></div></div></div></div></header>
 <main><section class="intro" id="conversacion"><div class="wrap intro-grid"><div><span class="eyebrow">La crianza nos atraviesa</span><p class="quote">Queremos darles lo mejor a nuestros hijos, pero no siempre tenemos todas las respuestas.</p></div><div class="copy"><p>¿Te has preguntado si estás poniendo los límites adecuados? ¿Si eres demasiado permisivo o demasiado exigente? ¿Si las herramientas de crianza que aprendiste siguen funcionando con los niños, niñas y adolescentes de hoy?</p><p>La crianza nos pone frente a preguntas y desafíos todos los días. Por eso queremos abrir un espacio para conversar sobre lo que estamos viviendo y sobre el contexto en el que crecen las nuevas generaciones.</p><p><strong>No será una clase magistral ni una charla llena de fórmulas mágicas.</strong> Será un rato para compartir, reírnos, debatir, cuestionarnos y fortalecer nuestras prácticas.</p></div></div></section>
 <section class="topics" id="temas"><div class="wrap"><div class="section-head"><span class="eyebrow">Lo que pondremos sobre la mesa</span><h2>Conversaciones que importan en la vida real.</h2><p>Un espacio cercano para mirar la crianza desde distintas perspectivas y hablar de los retos actuales.</p></div><div class="topic-grid"><article class="topic"><span class="num">01 / LÍMITES</span><h3>¿Cómo poner límites?</h3><p>Conversaremos sobre límites, acuerdos y formas de acompañar sin caer en extremos.</p></article><article class="topic"><span class="num">02 / ESTILOS DE CRIANZA</span><h3>¿Cómo estamos criando?</h3><p>Reconocer estilos, revisar lo que repetimos y pensar qué podemos transformar.</p></article><article class="topic"><span class="num">03 / DESAFÍOS ACTUALES</span><h3>Los retos de hoy</h3><p>Los desafíos que atraviesan a niños, niñas, adolescentes y a quienes los acompañamos.</p></article><article class="topic"><span class="num">04 / CONTEXTO DIGITAL</span><h3>Crecer en un mundo conectado</h3><p>Reflexionar sobre el contexto digital y su lugar en la crianza contemporánea.</p></article><article class="topic"><span class="num">05 / NUESTRAS PRÁCTICAS</span><h3>Cuestionar para crecer</h3><p>Reforzar lo que funciona y animarnos a revisar aquello que necesita cambiar.</p></article><article class="topic"><span class="num">06 / EXPERIENCIAS</span><h3>Aprender entre todos</h3><p>Compartir vivencias, debatir y descubrir nuevas miradas en compañía.</p></article></div></div></section>
 <section class="experience"><div class="wrap experience-grid"><div><span class="eyebrow">No hace falta tener todo resuelto</span><h2>Ven con tus preguntas. Nos sentamos a conversar.</h2><p>Este encuentro está pensado para madres, padres, cuidadores, educadores y todas las personas que tienen un papel importante en la crianza de niños, niñas y adolescentes.</p></div><div class="benefits"><div class="benefit"><span class="heart">♥</span><div><strong>Un espacio para escucharnos</strong><br>Compartir experiencias desde el respeto, sin buscar culpables.</div></div><div class="benefit"><span class="heart">♥</span><div><strong>Ideas para llevar a la vida cotidiana</strong><br>Revisar nuestras prácticas y sumar nuevas perspectivas.</div></div><div class="benefit"><span class="heart">♥</span><div><strong>Una conversación con calidez</strong><br>Aprender, debatir y reírnos mientras tomamos un café.</div></div></div></div></section>
-<section class="event" id="detalles"><div class="wrap event-grid"><div><span class="eyebrow">Primer encuentro · Guarda la fecha</span><h2>¡Venga, pues!<br>Ese cafecito va a estar rico.</h2><p>Regálate un momento para conversar sobre algo que nos importa profundamente: cómo acompañamos el crecimiento de las nuevas generaciones.</p><div class="price">Inversión: $10.000 ARS · Incluye merienda</div></div><div class="event-cards"><div class="event-card"><small>Fecha</small><strong>Jueves<br>3 de diciembre de 2026</strong></div><div class="event-card"><small>Hora</small><strong>19:00 h<br>Argentina</strong></div><div class="event-card wide"><small>Lugar</small><strong>Club Country Banfield<br>Banfield, Argentina</strong></div></div></div></section>
-<section class="register" id="registro"><div class="wrap register-grid"><div class="register-copy"><span class="eyebrow">Inscripciones</span><h2>Tu lugar en la mesa empieza aquí.</h2><p>Completa el formulario para solicitar tu inscripción. Te contactaremos para coordinar el registro y compartirte los detalles del encuentro.</p><p><strong>Un cafecito con criterio</strong><br>Jueves 3 de diciembre · 19:00 h<br>Club Country Banfield · Banfield</p><div class="contact"><strong>¿Preferís consultar o inscribirte por WhatsApp?</strong><a href="https://wa.me/541144407492" target="_blank" rel="noopener">+54 11 4440-7492</a><a href="https://wa.me/541156996719" target="_blank" rel="noopener">+54 11 5699-6719</a></div></div><div class="form-card"><h3>Reserva tu lugar ☕</h3><p>Completa tus datos. Los campos con * son obligatorios.</p><form id="registrationForm" method="POST">
-  <div class="field">
-    <label for="name">Nombre *</label>
-    <input id="name" name="nombre" type="text" placeholder="Tu nombre" autocomplete="name" required>
-  </div>
-  <div class="field">
-    <label for="phone">Celular *</label>
-    <input id="phone" name="celular" type="tel" placeholder="Código de área + número" autocomplete="tel" required>
-  </div>
-  <div class="field">
-    <label for="email">Correo electrónico *</label>
-    <input id="email" name="correo" type="email" placeholder="tunombre@correo.com" autocomplete="email" required>
-  </div>
-  <input type="hidden" name="evento" value="Un cafecito con criterio - 3 de diciembre de 2026 - Banfield">
-  <div style="position:absolute;left:-5000px" aria-hidden="true">
-    <label for="website">No completar</label>
-    <input id="website" name="_gotcha" tabindex="-1" autocomplete="off">
-  </div>
-  <button class="btn submit" type="submit">Quiero inscribirme ☕</button>
-  <p class="privacy">Usaremos tus datos únicamente para gestionar tu inscripción y contactarte sobre este encuentro.</p>
-  <div class="form-message" id="formMessage" role="status" aria-live="polite"></div>
-</form></div></div></section></main>
+<section class="event" id="detalles"><div class="wrap event-grid"><div><span class="eyebrow">Primer encuentro · Guarda la fecha</span><h2>¡Venga, pues!<br>Ese cafecito va a estar rico.</h2><p>Regálate un momento para conversar sobre algo que nos importa profundamente: cómo acompañamos el crecimiento de las nuevas generaciones.</p><div class="price">Inversión: $10.000 ARS · Incluye merienda</div></div><div class="event-cards"><div class="event-card"><small>Fecha</small><strong>Jueves<br>3 de diciembre de 2026</strong></div><div class="event-card"><small>Hora</small><strong>19:00 h<br>Argentina</strong></div><div class="event-card wide"><small>Lugar</small><strong>Club Country Banfield<br>Banfield, Argentina</strong></div><button type="button" class="btn js-open-registration event-cta">Quiero inscribirme ☕</button></div></div></section>
+</main>
+
+<div class="modal-backdrop" id="registrationModal" aria-hidden="true">
+  <section class="registration-modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+    <button type="button" class="modal-close" id="closeRegistrationModal" aria-label="Cerrar">×</button>
+    <span class="eyebrow">Un cafecito con criterio</span>
+    <h2 id="modalTitle">Reservá tu lugar ☕</h2>
+    <p class="modal-intro">Dejanos tus datos para iniciar tu inscripción. Después te indicaremos cómo completar el pago.</p>
+    <form id="registrationForm" method="POST">
+      <div class="field">
+        <label for="name">Nombre *</label>
+        <input id="name" name="nombre" type="text" placeholder="Tu nombre" autocomplete="name" required>
+      </div>
+      <div class="field">
+        <label for="phone">Celular *</label>
+        <input id="phone" name="celular" type="tel" placeholder="Código de área + número" autocomplete="tel" required>
+      </div>
+      <div class="field">
+        <label for="email">Correo electrónico *</label>
+        <input id="email" name="correo" type="email" placeholder="tunombre@correo.com" autocomplete="email" required>
+      </div>
+      <input type="hidden" name="evento" value="Un cafecito con criterio - 3 de diciembre de 2026 - Banfield">
+      <div style="position:absolute;left:-5000px" aria-hidden="true">
+        <label for="website">No completar</label>
+        <input id="website" name="_gotcha" tabindex="-1" autocomplete="off">
+      </div>
+      <button class="btn submit" type="submit">Continuar con mi inscripción ☕</button>
+      <p class="privacy">Usaremos tus datos para gestionar tu inscripción y contactarte sobre este encuentro.</p>
+      <div class="form-message" id="formMessage" role="status" aria-live="polite"></div>
+    </form>
+  </section>
+</div>
+
 <footer><div class="wrap footer-inner"><div><strong>¡Venga, pues! Un cafecito con criterio ☕</strong><br><small>Un encuentro entre café y psicología.</small></div><small>© 2026 · Todos los derechos reservados</small></div></footer>
 <script>
-  // https://script.google.com/macros/s/AKfycbzQYHmVDh3vl2VvTLKMVz3lwYIjWydvR_ibj-oZVd3d2K5-60kZOPc-3JtU-TCW5_j8/exec
-  const GOOGLE_APPS_SCRIPT_URL = 'PEGA_AQUI_TU_URL_DE_APPS_SCRIPT';
+  // IMPORTANTE: reemplazá este texto por la URL /exec de tu aplicación web de Apps Script.
+  const GOOGLE_APPS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbzQYHmVDh3vl2VvTLKMVz3lwYIjWydvR_ibj-oZVd3d2K5-60kZOPc-3JtU-TCW5_j8/exec';
+
+  const modal = document.getElementById('registrationModal');
   const form = document.getElementById('registrationForm');
   const message = document.getElementById('formMessage');
+  const closeButton = document.getElementById('closeRegistrationModal');
+  let lastFocusedElement = null;
+
+  function openRegistrationModal(event) {
+    if (event) event.preventDefault();
+    lastFocusedElement = document.activeElement;
+    modal.classList.add('is-open');
+    modal.setAttribute('aria-hidden', 'false');
+    document.body.classList.add('modal-open');
+    window.setTimeout(() => document.getElementById('name').focus(), 40);
+  }
+
+  function closeRegistrationModal() {
+    modal.classList.remove('is-open');
+    modal.setAttribute('aria-hidden', 'true');
+    document.body.classList.remove('modal-open');
+    if (lastFocusedElement) lastFocusedElement.focus();
+  }
+
+  document.querySelectorAll('.js-open-registration').forEach((button) => {
+    button.addEventListener('click', openRegistrationModal);
+  });
+  closeButton.addEventListener('click', closeRegistrationModal);
+  modal.addEventListener('click', (event) => {
+    if (event.target === modal) closeRegistrationModal();
+  });
+  document.addEventListener('keydown', (event) => {
+    if (event.key === 'Escape' && modal.classList.contains('is-open')) closeRegistrationModal();
+  });
 
   form.addEventListener('submit', async (event) => {
     event.preventDefault();
-    const data = Object.fromEntries(new FormData(form).entries());
-    if (data._gotcha) return;
+    message.style.display = 'none';
 
-    if (!GOOGLE_APPS_SCRIPT_URL.startsWith('https://script.google.com/macros/s/')) {
-      message.textContent = 'El formulario todavía está pendiente de conexión. Escribinos por WhatsApp para completar tu inscripción.';
+    if (!/^https:\/\/script\.google\.com\/macros\/s\/[^/]+\/exec(?:\?.*)?$/.test(GOOGLE_APPS_SCRIPT_URL)) {
+      message.textContent = 'Falta conectar el formulario: pegá en el HTML la URL de la aplicación web de Google Apps Script que termina en /exec. Después guardá y volvé a desplegar en Vercel.';
       message.style.display = 'block';
       return;
     }
+
+    const data = Object.fromEntries(new FormData(form).entries());
+    if (data._gotcha) return;
 
     data.evento = 'Un cafecito con criterio';
     data.fecha_evento = '03/12/2026';
@@ -57,14 +121,13 @@
     data.lugar = 'Club Country Banfield, Banfield, Argentina';
     data.inversion = '10.000 ARS';
 
-    const button = form.querySelector('button[type="submit"]');
-    button.disabled = true;
-    button.textContent = 'Enviando...';
-    message.style.display = 'none';
+    const submitButton = form.querySelector('button[type="submit"]');
+    submitButton.disabled = true;
+    submitButton.textContent = 'Enviando...';
 
     try {
-      // Apps Script se llama en no-cors para evitar el preflight CORS del navegador.
-      // La recepción real debe verificarse en Google Sheets durante la prueba inicial.
+      // La solicitud se envía como texto simple para evitar preflight CORS.
+      // Por el modo no-cors el navegador no puede leer la respuesta de Apps Script.
       await fetch(GOOGLE_APPS_SCRIPT_URL, {
         method: 'POST',
         mode: 'no-cors',
@@ -72,14 +135,13 @@
         body: JSON.stringify(data)
       });
 
-      // Conservamos el nombre solo en esta sesión para personalizar el mensaje de WhatsApp.
       try { sessionStorage.setItem('cafecitoNombre', data.nombre || ''); } catch (_) {}
-      window.location.href = '/gracias/';
+      window.location.assign('/gracias/');
     } catch (error) {
-      message.textContent = 'No pudimos enviar tus datos. Intentá nuevamente o escribinos por WhatsApp.';
+      message.textContent = 'No pudimos enviar el formulario. Revisá tu conexión e intentá nuevamente.';
       message.style.display = 'block';
-      button.disabled = false;
-      button.textContent = 'Quiero inscribirme ☕';
+      submitButton.disabled = false;
+      submitButton.textContent = 'Continuar con mi inscripción ☕';
     }
   });
 </script></body></html>
